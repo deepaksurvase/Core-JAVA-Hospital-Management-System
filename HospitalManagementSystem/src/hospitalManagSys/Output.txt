@@ -1,0 +1,82 @@
+
+ **** HOSPITAL MANAGEMENT SYSTEM **** 
+
+ 1:Add Patient
+ 2:View Patient
+ 3:view Doctor
+ 4:Book Appointment
+ 5:Exit  
+
+ Enter Your Choice : 
+1
+ Enter Patient Name  : Sanjay
+ Enter Patient Age   :22
+ Enter Patient Gender:male
+  Patient Added Succesfully
+
+ **** HOSPITAL MANAGEMENT SYSTEM **** 
+
+ 1:Add Patient
+ 2:View Patient
+ 3:view Doctor
+ 4:Book Appointment
+ 5:Exit  
+
+ Enter Your Choice : 
+2
+Patients
++------------+----------------------+-------+-------------------+ 
+| Patient Id | Name                 | Age   | Gender            | 
++------------+----------------------+-------+-------------------+ 
+| 1          | first                | 55    | male              |
++------------+----------------------+-------+-------------------+ 
+| 2          | Sanjay               | 22    | male              |
++------------+----------------------+-------+-------------------+ 
+
+ **** HOSPITAL MANAGEMENT SYSTEM **** 
+
+ 1:Add Patient
+ 2:View Patient
+ 3:view Doctor
+ 4:Book Appointment
+ 5:Exit  
+
+ Enter Your Choice : 
+3
+Doctors
++------------+----------------------+---------------------------+ 
+| Doctor Id  | Name                 | specialization            | 
++------------+----------------------+---------------------------+ 
+| 1          | Pankaj Jain          | Physician                 |
++------------+----------------------+---------------------------+ 
+| 2          | Harshit              | NeuroSurgeon              |
++------------+----------------------+---------------------------+ 
+
+ **** HOSPITAL MANAGEMENT SYSTEM **** 
+
+ 1:Add Patient
+ 2:View Patient
+ 3:view Doctor
+ 4:Book Appointment
+ 5:Exit  
+
+ Enter Your Choice : 
+4
+Enter Patient id: 2
+Enter Doctor  id: 2
+Enter Appointment date (YYYY-MM-DD): 
+2024-07-02
+Appointment Booked 
+
+
+ **** HOSPITAL MANAGEMENT SYSTEM **** 
+
+ 1:Add Patient
+ 2:View Patient
+ 3:view Doctor
+ 4:Book Appointment
+ 5:Exit  
+
+ Enter Your Choice : 
+5
+Thank You For Visiting Hospital Management System !!!

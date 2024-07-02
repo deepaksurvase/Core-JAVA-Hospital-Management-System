@@ -1,0 +1,81 @@
+CREATE DATABASE Hospital;  //to create database
+use Hospital;
+
+CREATE TABLE Patients( id int AUTO-INCREMENT PRIMARY KEY,name VARCHAR(255) NOT NULL,
+age int NOT NULL,gender VARCHAR(255) NOT NULL); //TABLE 1
+mysql> desc patients;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int          | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(255) | NO   |     | NULL    |                |
+| age    | int          | NO   |     | NULL    |                |
+| gender | varchar(10)  | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+
+
+
+CREATE TABLE Doctors( id int AUTO-INCREMENT PRIMARY KEY,name VARCHAR(255) NOT NULL,
+specialization VARCHAR(255) NOT NULL); //TABLE 2
+mysql> desc doctors;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| id             | int          | NO   | PRI | NULL    | auto_increment |
+| name           | varchar(255) | NO   |     | NULL    |                |
+| specialization | varchar(255) | YES  |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+
+
+CREATE TABLE appointments( id int AUTO-INCREMENT PRIMARY KEY,patient_id int NOT NULL
+,doctor_id int NOT NULL, appointment_date DATE NOT NULL,
+FOREIGN KEY(patient_id) REFERENCES Patients(id),
+FOREIGN KEY(doctor_id) REFERENCES doctors(id)); //table 3 connected to table1 & table2 with the help FOREIGN KEY
+mysql> desc appointments;
++------------------+------+------+-----+---------+----------------+
+| Field            | Type | Null | Key | Default | Extra          |
++------------------+------+------+-----+---------+----------------+
+| id               | int  | NO   | PRI | NULL    | auto_increment |
+| patient_id       | int  | NO   | MUL | NULL    |                |
+| doctor_id        | int  | NO   | MUL | NULL    |                |
+| appointment_date | date | NO   |     | NULL    |                |
++------------------+------+------+-----+---------+----------------+
+
+// to check all the tables in databases
+mysql>show tables;
++--------------------+
+| Tables_in_hospital |
++--------------------+
+| appointments       |
+| doctors            |
+| patients           |
++--------------------+
+---------------------------------------------------------------Data filled---------------------------------------------------------------------------------
+//In doctor table Doctors are added by the Admin 
+INSERT INT Doctors(name ,specialization) VALUSES("Pankaj Jain","Physician");// 1 doctor added
+
+INSERT INT Doctors(name ,specialization) VALUSES("Harshit","NeuroSurgeon");// 2 doctor added
+
+mysql> select * from doctors;
++----+-------------+----------------+
+| id | name        | specialization |
++----+-------------+----------------+
+|  1 | Pankaj Jain | Physician      |
+|  2 | Harshit     | NeuroSurgeon   |
++----+-------------+----------------+
+
+// patients Details And appointment Date will filled by USERS
+mysql> SELECT* FROM patients;
++----+--------+-----+--------+
+| id | name   | age | gender |
++----+--------+-----+--------+
+|  1 | first  |  55 | male   |
+|  2 | Sanjay |  22 | male   |
++----+--------+-----+--------+
+mysql> SELECT* FROM appointments;
++----+------------+-----------+------------------+
+| id | patient_id | doctor_id | appointment_date |
++----+------------+-----------+------------------+
+|  1 |          1 |         1 | 2024-06-24       |
+|  2 |          2 |         2 | 2024-07-02       |
++----+------------+-----------+------------------+
